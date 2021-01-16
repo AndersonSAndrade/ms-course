@@ -2,10 +2,7 @@ package com.itcode.hrworker.domain.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -14,6 +11,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
+@Table(name = "tb_worker")
 public class Worker {
 
     @Id
@@ -21,7 +19,7 @@ public class Worker {
     @EqualsAndHashCode.Include
     private Long id;
     @NotNull(message = "Field First Name be null")
-    private String firstName;
+    private String firstname;
     @NotNull(message = "Field Last Name be null")
     private String lastname;
     @NotNull(message = "Field email be null")
